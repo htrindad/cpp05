@@ -6,15 +6,17 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:58 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/05 18:05:58 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/13 11:07:10 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <ctypes>
+#include <string>
 #include <exception>
 
-class Bureaucrat : public std::exception
+class Bureaucrat
 {
 	private:
 		std::string const	name;
@@ -24,6 +26,24 @@ class Bureaucrat : public std::exception
 		~Bureaucrat();
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat &operator=(const Bureaucrat &ref);
-		const std::string getName();
-		const int getGrade();
+		Bureaucrat(const Bureaucrat &ref);
+		std::string getName() const;
+		int getGrade() const;
+		void incrementGrade();
+		void decrementGrade();
+
+		// Exceptions
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		}
 };
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &ref);
