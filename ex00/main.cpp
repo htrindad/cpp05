@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:21:59 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:29:51 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:34:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 		}
 		catch (std::exception &e)
 		{
-			std::cerr << "Bureaucrat " << names[i] << "is faulty, due to " << e.what() << '\n';
+			std::cerr << "Bureaucrat " << names[i] << " is faulty, due to " << e.what() << '\n';
 		}
 	}
 	for (size_t i = 0; i < 5; i++)
