@@ -2,7 +2,7 @@ NAME = Bureaucrat
 
 SRC = Bureaucrat.cpp main.cpp
 
-OBJ = $(SRC:.%cpp=%.o)
+OBJ = $(SRC:.cpp=.o)
 
 CXXFLAGS = -Wall -Werror -Wextra -O3 -std=c++98
 

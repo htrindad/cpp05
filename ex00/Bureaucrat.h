@@ -6,15 +6,16 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:58 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/13 11:07:10 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:31:46 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <ctypes>
 #include <string>
 #include <exception>
+
+typedef unsigned long size_t;
 
 class Bureaucrat
 {
