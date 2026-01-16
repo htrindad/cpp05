@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:32:26 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:33:16 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 		throw GradeTooHighException();
 	else if (grade > 150)
 		throw GradeTooLowException();
-	this.grade = grade;
+	this->grade = grade;
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &ref)
 {
