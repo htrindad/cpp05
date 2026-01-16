@@ -6,33 +6,27 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 17:44:18 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:27:49 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
 
 //CDO
-Bureaucrat::Bureaucrat()
-{
-	name = "Default";
-	grade = 150;
-	std::cout << "Base constructor called\n";
-}
+Bureaucrat::Bureaucrat() : name("Default"), grade(150) { std::cout << "Base constructor called\n"; }
 Bureaucrat::~Bureaucrat() { std::cout << "Base destructor called\n"; }
 Bureaucrat::Bureaucrat(const Bureaucrat &ref)
 {
 	std::cout << "Copy constructor called.\n";
 	*this = ref;
 }
-Bureaucrat::Bureaucrat(std::string const name, int grade)
+Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 {
 	std::cout << "Complex constructor called\n";
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
 		throw GradeTooLowException();
-	this.name = name;
 	this.grade = grade;
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &ref)
@@ -50,7 +44,7 @@ const int Bureaucrat::getGrade() { return grade; }
 void Bureaucrat::incrementGrade()
 {
 	if (grade == 1)
-		throw std::exception("Grade is too high!");
+		throw GradeTooHighException();
 	grade--;
 }
 
