@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:27:49 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:32:26 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &ref)
 {
 	std::cout << "Copy operator called\n";
-	if (this != ref)
+	if (this != &ref)
 		grade = ref.grade;
 	return *this;
 }
 
 //Methods
-const std::string Bureaucrat::getName() { return name; }
-const int Bureaucrat::getGrade() { return grade; }
+std::string Bureaucrat::getName() const { return name; }
+int Bureaucrat::getGrade() const { return grade; }
 
 void Bureaucrat::incrementGrade()
 {

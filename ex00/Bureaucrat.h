@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:58 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:31:46 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:32:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat
 		{
 			public:
 				virtual const char *what() const throw();
-		}
+		};
 };
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &ref);
