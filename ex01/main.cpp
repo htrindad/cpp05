@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:21:59 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 16:02:58 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:11:20 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	{
 		bureaucrating = Bureaucrat("Huguinho", 5);
 		forming = Form("Hugo", 5, 3);
-		forming.beSigned(bureaucrating);
+		bureaucrating.signForm(forming);
 		std::cout << "\n\n" << bureaucrating << forming << "\n\n";
 	}
 	catch (std::exception &e)

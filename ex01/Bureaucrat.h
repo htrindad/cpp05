@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:37:58 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:32:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:20:29 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.h"
 
-typedef unsigned long size_t;
+class Form;
 
 class Bureaucrat
 {
@@ -32,6 +33,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &ref);
 
 		// Exceptions
 		class GradeTooHighException : public std::exception
