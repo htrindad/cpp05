@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 18:45:05 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 16:34:14 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 18:39:20 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ Form &Form::operator=(const Form &ref)
 Form::Form(std::string const name, const int init_grade, const int exec_grade) : name(name), sig(false), init_grade(init_grade), exec_grade(exec_grade)
 {
 	std::cout << "Constructor called\n";
-	if (init_grade > 150 || exec_grade > 150)
+	if (init_grade > 150)
 		throw GradeTooLowException();
-	if (init_grade < 1 || exec_grade < 1)
+	if (init_grade < 1)
 		throw GradeTooHighException();
 }
 

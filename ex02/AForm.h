@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:36:52 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 16:50:01 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 18:36:50 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class AForm
 		bool getSig() const;
 		int getInit() const;
 		int getExec() const;
+		void setSig(bool sig);
 
 		// exceptions
 		class GradeTooHighException : public std::exception
