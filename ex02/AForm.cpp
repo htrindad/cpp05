@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:07 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 16:58:17 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 18:44:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ AForm &AForm::operator=(const AForm &ref)
 	sig = ref.sig;
 	return *this;
 }
+
+// Methods
+void AForm::beSigned(const Bureaucrat &ref)
+{
+	if (ref.getGrade() <= init_grade)
+		sig = true;
+	else
+		throw GradeTooLowException();
+}
+
+std::string AForm::getName() const { return name; }
+bool AForm::getSig() const { return sig; }
+int AForm::getInit() const { return init_grade; }
+int AForm::getExec() const { return exec_grade; }
+
+void AForm::setSig(bool sig) { this->sig = sig; }
 
 // Exceptions
 const char *AForm::GradeTooLowException::what() const throw() { return "Grade too low!"; }
