@@ -6,17 +6,18 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 18:36:11 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:50:14 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:55:45 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "Bureaucrat.h"
 
 class Form
 {
 	private:
 		const std::string	name;
-		bool			sig = false;
+		bool			sig;
 		const int		init_grade;
 		const int		exec_grade;
 	public:
@@ -26,6 +27,10 @@ class Form
 		Form &operator=(const Form &ref);
 		Form(const std::string name, const int init_grade, const int exec_grade);
 		void beSigned(const Bureaucrat &b);
+		std::string getName() const;
+		bool getSig() const;
+		int getInit() const;
+		int getExec() const;
 
 		// Exceptions
 		class GradeTooHighException : public std::exception

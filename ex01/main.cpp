@@ -6,56 +6,27 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:21:59 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/16 18:34:38 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:02:58 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.h"
+#include "Form.h"
 
 int main()
 {
-	Bureaucrat b[3];
-	std::string names[3] = {"Hugo", "Mario", "David"};
-	int values[3] = {3, 0, 160};
+	Form		forming;
+	Bureaucrat	bureaucrating;
 
-	for (size_t i = 0; i < 3; i++)
+	try
 	{
-		try
-		{
-			b[i] = Bureaucrat(names[i], values[i]);
-		}
-		catch (std::exception &e)
-		{
-			std::cerr << "Bureaucrat " << names[i] << " is faulty, due to " << e.what() << '\n';
-		}
+		bureaucrating = Bureaucrat("Huguinho", 5);
+		forming = Form("Hugo", 5, 3);
+		forming.beSigned(bureaucrating);
+		std::cout << "\n\n" << bureaucrating << forming << "\n\n";
 	}
-	for (size_t i = 0; i < 5; i++)
+	catch (std::exception &e)
 	{
-		try
-		{
-			b[0].incrementGrade();
-			std::cout << "Grade has been incremented!\n"
-				<< b[0] << '\n';
-		}
-		catch (std::exception &e)
-		{
-			std::cerr << "Exception called. Loop broken...\n";
-			break ;
-		}
-	}
-	while (1)
-	{
-		try
-		{
-			b[0].decrementGrade();
-			std::cout << "Grade has been decremented!\n"
-				<< b[0] << '\n';
-		}
-		catch (std::exception &e)
-		{
-			std::cerr << "Exception called. Loop broken";
-			break ;
-		}
+		std::cerr << "Well shi*... " << e.what() << " happened\n";
 	}
 	return 0;
 }
