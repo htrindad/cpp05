@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:58:43 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 19:05:01 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/21 13:57:44 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,17 @@ RobotomyRequestForm &RobotomyRequestForm::operator(const RobotomyRequestForm &re
 
 // Methods
 void RobotomyRequestForm::performAction() const
-{}
+{
+	bool rn = std::rand() % 2;
+
+	if (rn)
+		std::cout << getName() << " has been robotomized successfully!\n";
+	else
+		throw rf();
+}
+
+std::string RobotomyRequestForm::getTarget() const { return target; }
+void RobotomyRequestForm::setTarget(const std::string &target) { this->target = target; }
+
+// Methods
+const char *RobotomyRequestForm::rf::what() const throw() { return "Unfortunately, the robotomy had failed...\n"; }
