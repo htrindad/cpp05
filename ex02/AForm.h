@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:36:52 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 18:36:50 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:30:05 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class AForm
 		int getInit() const;
 		int getExec() const;
 		void setSig(bool sig);
+		void execute(const Bureaucrat &executor) const;
 
 		// exceptions
 		class GradeTooHighException : public std::exception
@@ -46,6 +47,11 @@ class AForm
 				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class ns : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();

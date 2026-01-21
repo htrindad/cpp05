@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:07 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 18:44:52 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:33:25 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,18 @@ std::string AForm::getName() const { return name; }
 bool AForm::getSig() const { return sig; }
 int AForm::getInit() const { return init_grade; }
 int AForm::getExec() const { return exec_grade; }
-
 void AForm::setSig(bool sig) { this->sig = sig; }
+
+void AForm::execute(const Bureaucrat &executor) const
+{
+	if (!sig)
+		throw ns();
+	if (exec_grade < executor.getGrade())
+		throw GradeTooLowException();
+	performAction();
+}
 
 // Exceptions
 const char *AForm::GradeTooLowException::what() const throw() { return "Grade too low!"; }
 const char *AForm::GradeTooHighException::what() const throw() { return "Grade too high!"; }
+const char *AFrom::ns::what() const throw() { return "This form is not signed!"; }
