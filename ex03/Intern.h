@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.h                           :+:      :+:    :+:   */
+/*   Intern.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 13:58:21 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 12:09:31 by htrindad         ###   ########.fr       */
+/*   Created: 2026/01/22 11:51:49 by htrindad          #+#    #+#             */
+/*   Updated: 2026/01/22 12:08:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AForm.h"
 
-class PresidentialPardonForm : public AForm
-{
-	private:
-		std::string target;
-	public:
-		PresidentialPardonForm();
-		~PresidentialPardonForm();
-		PresidentialPardonForm(const PresidentialPardonForm &ref);
-		PresidentialPardonForm(const std::string &target);
-		PresidentialPardonForm &operator=(const PresidentialPardonForm &ref);
+class AForm;
 
-		// Methods
-		virtual void performAction() const;
-		std::string getTarget() const;
-		void setTarget(const std::string &target);
+class Intern
+{
+	public:
+		Intern();
+		~Intern();
+		Intern(const Intern &ref);
+		Inter &operator=(const Intern &ref);
+
+		// methods
+		AForm *makeForm(const std::string formName, const std::string formTarget);
 };

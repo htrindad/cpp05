@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/19 16:50:07 by htrindad          #+#    #+#             */
+/*   Updated: 2026/01/22 11:32:12 by htrindad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "AForm.h"
+
+// CDO
+AForm::AForm() : name("Default"), sig(false), init_grade(150), exec_grade(150) { std::cout << "Default constructor called\n"; }
+AForm::~AForm() { std::cout << "Default destructor called\n"; }
+AForm::AForm(const std::string name, const int init_grade, const int exec_grade) : name(name), sig(false), init_grade(init_grade), exec_grade(exec_grade)
+{
+	std::cout << "Constructor called\n";
+	if (init_grade < 1 || exec_grade < 1)
+		throw GradeTooHighException();
+	if (init_grade > 150 || exec_grade > 150)
+		throw GradeTooLowException();
+}
+AForm::AForm(const AForm &ref) : name(ref.name), sig(ref.sig), init_grade(ref.init_grade), exec_grade(ref.exec_grade)
+{
+	std::cout << "Copy constructor called\n";
+}
+AForm &AForm::operator=(const AForm &ref)
+{
+	std::cout << "Copy constructor called\n";
+	sig = ref.sig;
+	return *this;
+}
+
+// Methods
+void AForm::beSigned(const Bureaucrat &ref)
+{
+	if (ref.getGrade() <= init_grade)
+		sig = true;
+	else
+		throw GradeTooLowException();
+}
+
+std::string AForm::getName() const { return name; }
+bool AForm::getSig() const { return sig; }
+int AForm::getInit() const { return init_grade; }
+int AForm::getExec() const { return exec_grade; }
+void AForm::setSig(bool sig) { this->sig = sig; }
+
+void AForm::execute(const Bureaucrat &executor) const
+{
+	if (!sig)
+		throw ns();
+	if (exec_grade < executor.getGrade())
+		throw GradeTooLowException();
+	performAction();
+}
+
+// Exceptions
+const char *AForm::GradeTooLowException::what() const throw() { return "Grade too low!"; }
+const char *AForm::GradeTooHighException::what() const throw() { return "Grade too high!"; }
+const char *AForm::ns::what() const throw() { return "This form is not signed!"; }
