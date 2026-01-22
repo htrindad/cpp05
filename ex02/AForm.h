@@ -6,13 +6,14 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:36:52 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/21 14:30:05 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:10:26 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Bureaucrat.h"
 #include "Form.h"
+#include <cstdlib>
 
 class Bureaucrat;
 
