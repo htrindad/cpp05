@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:36:52 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 11:30:43 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:17:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm
 		virtual void		performAction() const = 0;
 	public:
 		AForm();
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm &ref);
 		AForm &operator=(const AForm &ref);
 		AForm(const std::string name, const int init_grade, const int exec_grade);
