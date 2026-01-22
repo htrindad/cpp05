@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:30:35 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/21 14:19:30 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:47:32 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // CDO
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) { std::cout << "Default constructor called\n"; }
 ShrubberyCreationForm::~ShrubberyCreationForm() { std::cout << "Default destructor called\n"; }
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target) { std::cout << "Target constructor called\n"; }
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), target(target) { std::cout << "Target constructor called\n"; }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &ref) : AForm(ref)
 {
 	std::cout << "Copy constructor called\n";
@@ -32,7 +32,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // Methods
 void ShrubberyCreationForm::performAction() const
 {
-	std::ofstream out(target + "_shrubbery");
+	std::ofstream out((target + "_shrubbery").c_str());
 
 	if (out)
 	{

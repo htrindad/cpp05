@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 11:29:35 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:31:49 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Bureaucrat::decrementGrade()
 	grade++;
 }
 
-void Bureaucrat::signForm(Form &ref)
+void Bureaucrat::signForm(AForm &ref)
 {
 	try
 	{
@@ -79,7 +79,7 @@ void Bureaucrat::executeForm(AForm const &form)
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << " happpened\n";
-		throw std::bad_alloc("something had happened you moron, because it is very likely that this type is not quite right!");
+		throw std::logic_error("something had happened you moron, because it is very likely that this type is not quite right!");
 	}
 }
 

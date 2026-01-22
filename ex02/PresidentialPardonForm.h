@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:58:21 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/21 14:23:30 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:33:07 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PresidentialPardonForm : public AForm
 	public:
 		PresidentialPardonForm();
 		~PresidentialPardonForm();
-		PresidentialPardonFomr(const PresidentialPardonForm &ref);
+		PresidentialPardonForm(const PresidentialPardonForm &ref);
 		PresidentialPardonForm(const std::string &target);
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &ref);
 

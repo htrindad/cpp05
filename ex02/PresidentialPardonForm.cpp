@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:02:03 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/21 14:22:49 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:48:41 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &ref
 	std::cout << "Copy constructor called\n";
 	*this = ref;
 }
-PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialForm &ref)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), target(target) { std::cout << "Target constructor called\n"; }
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &ref)
 {
 	std::cout << "Copy operator overload called\n";
 	target = ref.target;
 	setSig(ref.getSig());
 	return *this;
 }
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), target(target) { std::cout << "Target constructor called\n"; }
 
 // Methods
-void PresidentialPardonForm::performAction() const { std::cout << target << " has been pardoned by Zaphod Beeblebrox.\n" }
+void PresidentialPardonForm::performAction() const { std::cout << target << " has been pardoned by Zaphod Beeblebrox.\n"; }
 std::string PresidentialPardonForm::getTarget() const { return target; }
 void PresidentialPardonForm::setTarget(const std::string &target) { this->target = target; }

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:21:59 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 11:19:22 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:49:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 		{
 			robot[i] = RobotomyRequestForm(message);
 			shrubbery[i] = ShrubberyCreationForm(message);
-			president[i] = ShrubberyCreationForm(message);
+			president[i] = PresidentialPardonForm(message);
 		}
 		catch (std::exception &e)
 		{

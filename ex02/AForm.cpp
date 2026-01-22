@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:07 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/21 14:33:25 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:32:12 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,4 @@ void AForm::execute(const Bureaucrat &executor) const
 // Exceptions
 const char *AForm::GradeTooLowException::what() const throw() { return "Grade too low!"; }
 const char *AForm::GradeTooHighException::what() const throw() { return "Grade too high!"; }
-const char *AFrom::ns::what() const throw() { return "This form is not signed!"; }
+const char *AForm::ns::what() const throw() { return "This form is not signed!"; }
