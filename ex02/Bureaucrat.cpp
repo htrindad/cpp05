@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 11:31:49 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:37:28 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void Bureaucrat::signForm(AForm &ref)
 		std::cerr << name << " couldn't sign " << ref.getName() << " because " << e.what() << '\n';
 		return ;
 	}
-	std::cout << name << " signed " << ref.getName();
+	std::cout << name << " signed " << ref.getName() << '\n';
 }
 
 void Bureaucrat::executeForm(AForm const &form)

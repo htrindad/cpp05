@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:21:59 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/22 11:49:08 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:25:58 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ int main()
 	}
 	try
 	{
+		b.signForm(robot[0]);
 		b.executeForm(robot[0]);
+		b.signForm(shrubbery[0]);
 		b.executeForm(shrubbery[0]);
+		b.executeForm(president[0]);
 		b.executeForm(president[0]);
 	}
 	catch (std::exception &e)
