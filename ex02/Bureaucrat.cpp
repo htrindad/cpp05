@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:56:30 by htrindad          #+#    #+#             */
-/*   Updated: 2026/01/19 16:20:11 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:05:30 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ void Bureaucrat::signForm(Form &ref)
 		return ;
 	}
 	std::cout << name << " signed " << ref.getName();
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << '\n';
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << " happpened\n";
+	}
 }
 
 //Exceptions
